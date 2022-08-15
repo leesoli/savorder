@@ -21,7 +21,7 @@ export default function OrderItems ({item}) {
 
   return (
     <div className="flex flex-col items-center pb-16">
-      <div className="relative h-64 w-full mb-4 max-w-64">
+      <div className="relative h-80 md:h-48 w-full mb-4 max-w-64">
       <Image
         src={`/${item.url}`}
         alt="photo of menu item"
@@ -34,7 +34,7 @@ export default function OrderItems ({item}) {
       <div className="text-xl md:text-lg mb-4">${item.price}</div>
 
       {clicked ?
-        <button className="flex items-center p-1 border-green-700 border-2 text-green-700 uppercase text-base mt-auto md:text-xs">
+        <button className="flex items-center p-1 border-green-700 border-2 text-green-700 uppercase text-xs mt-auto">
           < CheckCircleIcon className="w-6 h-6 mr-2" /> Added to cart
         </button>:
         <button

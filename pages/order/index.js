@@ -52,7 +52,7 @@ export default function Order () {
   return (
     <div>
       <Header/>
-      <div className="px-8 py-12 md:flex md:justify-between xl:justify-start">
+      <div className="px-8 py-12 md:py-24 md:flex md:justify-between xl:justify-start">
         <div className="flex text-lg w-96 justify-between mb-8 md:flex-col md:mb-0 md:max-w-xs md:h-fit ml-2">
           <span
             className="border-r-2 pr-4 border-gray-100 md:border-none hover:cursor-pointer md:p-2 font-bold"
@@ -88,7 +88,7 @@ export default function Order () {
           >Cold Noodles</span>
         </div>
 
-        <div className="md:grid md:grid-cols-2 px-2 xl:grid-cols-3 md:gap-x-4 md:gap-y-8">{renderItems()}</div>
+        <div className="md:grid md:grid-cols-2 px-2 xl:grid-cols-3 md:gap-x-4 md:gap-y-8 md:w-3/4 md:mr-8">{renderItems()}</div>
       </div>
     </div>
   )
