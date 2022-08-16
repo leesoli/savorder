@@ -16,7 +16,7 @@ export default function Home() {
 
       <Header/>
       <main>
-        <section className="relative w-screen h-screen">
+        <section className="relative h-screen w-full">
           <Image
             src={MainImage} objectFit="cover" layout="fill"
             alt="closeup of hot soba"
@@ -25,7 +25,6 @@ export default function Home() {
             <button
               className="absolute text-white text-lg py-2 px-4 bg-[#B6B29D] opacity-80 top-1/2 left-1/3 sm:left-[43%] md:left-[45%]">Place Order</button>
           </Link>
-
         </section>
       </main>
 

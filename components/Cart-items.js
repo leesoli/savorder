@@ -33,7 +33,7 @@ export default function CartItems ({item}) {
         <div className="flex items-center sm:items-start">
           <MinusIcon
             onClick={() => updateQuantity(item.id, -1)}
-            className="w-5 h-5 md:w-6 md:h-6 hover:bg-gray-100 hover:rounded-xl md:mt-[1px]"/>
+            className="w-5 h-5 md:w-6 md:h-6 hover:bg-gray-100 hover:rounded-xl sm:ml-4 sm:mt-[1px]"/>
           <div>
             <input
               type="text"
@@ -41,18 +41,18 @@ export default function CartItems ({item}) {
               value={quantity}
               onChange={changeQuantity}
               min={1}
-              className="w-8 sm:w-12 px-2 mx-4 text-center text-lg lg:text-xl"
+              className="w-8 sm:w-12 px-2 mx-2 text-center text-lg lg:text-xl"
             >
             </input>
           </div>
           <PlusIcon
-            className="w-5 h-5 md:w-6 md:h-6 hover:bg-gray-100 hover:rounded-xl md:mt-[1px]"
+            className="w-5 h-5 md:w-6 md:h-6 hover:bg-gray-100 hover:rounded-xl sm:mt-[1px]"
             onClick={() => updateQuantity(item.id, 1)}
           />
         </div>
       </div>
 
-      <div className="flex flex-col justify-between sm:flex-row-reverse sm:w-1/4 pr-2">
+      <div className="flex flex-col justify-between sm:flex-row-reverse sm:w-1/4 pr-4">
         <XIcon
           className="w-7 h-7 hover:bg-gray-100 hover:rounded-xl self-end sm:self-start"
           onClick={() => removeFromCart(item.id, item)}
