@@ -12,8 +12,6 @@ export default function Header() {
   const [openMenu, setOpenMenu] = useState(true);
   const { total, theme, toggleTheme, activePage, changePage } = useContext(Context);
 
-  console.log(activePage, theme)
-
   useEffect(() => {
     checkTheme();
   }, [])

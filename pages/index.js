@@ -26,7 +26,7 @@ export default function Home() {
               onClick={() => {
                 changePage('order')
               }}
-              className="uppercase mt-12 sm:ml-12 bg-white text-gray-800 text-lg py-2 px-4">Order now</button>
+              className="uppercase mt-12 sm:ml-12 bg-white text-gray-800 text-lg py-2 px-4 hover:bg-gray-800 hover:text-white hover:border-2 hover:border-white transition duration-200 ease-in-out">Order now</button>
           </Link>
 
       </main>
