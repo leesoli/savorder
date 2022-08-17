@@ -19,8 +19,12 @@ export default function OrderItems ({item}) {
     }
   }, [clicked]);
 
+  console.log(item)
+
   return (
-    <div className="flex items-center border-b-2 border-gray-200 px-4 py-4 sm:border-2 sm:rounded-xl">
+    <div className="flex items-start border-b-2 border-gray-200 px-4 py-4 sm:border-2 sm:rounded-xl"
+      onClick={() => addToCart(item)}
+    >
       <div className="mr-16">
         <div className="text-xl font-bold my-2 sm:text-lg">{item.name}</div>
         <div className="max-w-xs text-lg sm:text-base sm:my-2 tracking-wider">{item.description}</div>

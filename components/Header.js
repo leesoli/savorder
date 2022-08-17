@@ -98,16 +98,10 @@ export default function Header() {
       </nav>
 
       <Link href="/cart">
-        {total > 0?
-        <SolidCartIcon
-          className="h-6 w-6 hover:cursor-pointer"
-          id="solid-cart-icon"
-        />:
         <ShoppingCartIcon
           className="h-6 w-6 light-header hover:cursor-pointer"
           id="cart-icon"
         />
-        }
       </Link>
     </div>
   )
