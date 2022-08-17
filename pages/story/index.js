@@ -17,7 +17,7 @@ export default function Story() {
             <Image src="/kris-sevinc.jpg" layout="fill" objectFit="cover"/>
           </div>
         </div>
-        <p className="my-8 sm:my-0 text-center text-lg sm:text-right sm:text-2xl sm:w-1/3 p-4 sm:p-0 sm:max-w-md sm:ml-8">Makisoba started in 1965 by a young couple who loved to cook and serve others. Julia and Peter, whom are now retired, have passed down their recipe and family-owned business to their children, Janette and Lowry.
+        <p className="my-16 sm:my-0 text-center text-lg sm:text-right sm:text-2xl sm:w-1/3 p-4 sm:p-0 sm:max-w-md sm:ml-8">Makisoba started in 1965 by a young couple who loved to cook and serve others. Julia and Peter, whom are now retired, have passed down their recipe and family-owned business to their children, Janette and Lowry.
         </p>
       </section>
       <section className="sm:px-36 py-36 bg-[#91A58D] text-white">

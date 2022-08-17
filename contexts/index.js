@@ -8,7 +8,7 @@ function ContextProvider({children}) {
   const [orderItems, setOrderItems] = useState([]);
   const [total, setTotal] = useState(0);
   const [form, setForm] = useState([]);
-  const [theme, setTheme] = useState("dark");
+  const [theme, setTheme] = useState("light");
   const [activePage, setActivePage] = useState('home');
 
   useEffect(() => {

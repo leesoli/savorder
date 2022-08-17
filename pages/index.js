@@ -8,7 +8,7 @@ import { useContext } from 'react';
 import {Context} from '../contexts/index';
 
 export default function Home() {
-  const { toggleTheme, theme } = useContext(Context);
+  const { changePage } = useContext(Context);
 
   return (
     <div>
@@ -24,9 +24,7 @@ export default function Home() {
           <Link href="/order">
             <button
               onClick={() => {
-                if (theme === 'light') {
-                  toggleTheme('dark');
-                }
+                changePage('order')
               }}
               className="uppercase mt-12 sm:ml-12 bg-white text-gray-800 text-lg py-2 px-4">Order now</button>
           </Link>

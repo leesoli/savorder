@@ -90,7 +90,8 @@ export default function Order () {
 
         <div className="border-gray-200 border-b-2 mb-2"></div>
 
-        <div className="sm:py-12 sm:px-12 sm:grid sm:grid-cols-2 xl:grid-cols-3 sm:gap-x-4 sm:gap-y-8">{renderItems()}</div>
+        <div className="sm:py-12 sm:px-12 sm:grid sm:grid-cols-1
+        md:grid-cols-2 xl:grid-cols-3 sm:gap-x-4 sm:gap-y-8">{renderItems()}</div>
       </div>
     </div>
   )

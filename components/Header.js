@@ -76,7 +76,7 @@ export default function Header() {
   }
 
   return (
-    <div className="flex p-12 sm:p-8 justify-between items-center border-gray-600 w-full">
+    <div className="flex p-8 justify-between items-center border-gray-600 w-full">
       {openMenu ?
         <MenuIcon
           onClick={openNav}
