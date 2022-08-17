@@ -19,8 +19,6 @@ export default function OrderItems ({item}) {
     }
   }, [clicked]);
 
-  console.log(item)
-
   return (
     <div className="flex items-start border-b-2 border-gray-200 px-4 py-4 sm:border-2 sm:rounded-xl"
       onClick={() => addToCart(item)}
