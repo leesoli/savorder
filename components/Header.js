@@ -44,26 +44,13 @@ export default function Header() {
 
       <nav>
         <ul className="hidden fixed bg-white text-black sm:text-white w-full z-10 left-0 top-0 bottom-0 sm:bg-transparent flex flex-col sm: flex-start sm:inline-flex sm:flex-row absolute sm:static sm:h-fit sm:w-fit items-center justify-center sm:justify-between text-2xl sm:text-lg sm:w-[18em] sm:mr-8" id="menu">
-          <li className="hover:text-blue-400 hover:cursor-pointer tracking-wider">
-            <Link href="/order">
-              <a onClick={closeNav}>Order</a>
-            </Link>
-          </li>
-          <li className="hover:text-blue-400 hover:cursor-pointer tracking-wider">
-            <Link href="/menu">
-              <a onClick={closeNav}>Menu</a>
-            </Link>
-          </li>
-          <li className="hover:text-blue-400 hover:cursor-pointer tracking-wider">
-            <Link href="/story">
-              <a onClick={closeNav}>Our Story</a>
-            </Link>
-          </li>
-          <li className="hover:text-blue-400 hover:cursor-pointer tracking-wider">
-            <Link href="/contact">
-              <a onClick={closeNav}>Contact</a>
-            </Link>
-          </li>
+          {["order", "menu", "story", "contact"].map(url => (
+            <li className="hover:text-blue-400 hover:cursor-pointer tracking-wider capitalize">
+              <Link href={'/'+ url}>
+                <a onClick={closeNav}>{url}</a>
+              </Link>
+            </li>
+          ))}
         </ul>
       </nav>
 
