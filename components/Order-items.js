@@ -20,35 +20,24 @@ export default function OrderItems ({item}) {
   }, [clicked]);
 
   return (
-    <div className="flex flex-col items-center pb-16">
-      <div className="relative h-80 md:h-48 w-full mb-4 max-w-64">
-      <Image
-        src={`/${item.url}`}
-        alt="photo of menu item"
-        layout="fill"
-        objectFit="cover"
-        />
+    <div className="flex items-center border-b-2 border-gray-200 px-4 py-4 sm:border-2 sm:rounded-xl">
+      <div className="mr-16">
+        <div className="text-xl font-bold my-2 sm:text-lg">{item.name}</div>
+        <div className="max-w-xs text-lg sm:text-base sm:my-2 tracking-wider">{item.description}</div>
+        <div className="text-md mb-4 sm:text-sm">${item.price}</div>
       </div>
-      <div className="text-2xl my-2 md:text-xl">{item.name}</div>
-      <div className="max-w-lg text-xl text-center leading-8 tracking-wider md:text-lg mb-2">{item.description}</div>
-      <div className="text-xl md:text-lg mb-4">${item.price}</div>
 
-      {clicked ?
-        <button className="flex items-center p-1 border-green-700 border-2 text-green-700 uppercase text-xs mt-auto">
-          < CheckCircleIcon className="w-6 h-6 mr-2" /> Added to cart
-        </button>:
-        <button
-          className="uppercase p-1 border-2 border-black tracking-wide overflow-hidden relative ease-in-out duration-200 mt-auto"
-          onMouseEnter={() => setHovered(true)}
-          onMouseLeave={() => setHovered(false)}
-          onClick={() => {
-            addToCart(item);
-            handleClick();
-          }}
-        >
-          <span className="ease-in-out text-xs">Add to cart</span>
-          {/* <ShoppingCartIcon className="w-6 h-6  top-[50%] right-[-35px] ease-linear duration-400 translate-y-[-50%] text-red-500 hover:right-[10px]"/> */}
-        </button>}
+      <div className="relative h-36 mb-4 w-48 max-w-xs border-2 border-gray-500 rounded-xl sm:h-28">
+        <Image
+          className="rounded-xl"
+          src={`/${item.url}`}
+          alt="photo of menu item"
+          layout="fill"
+          objectFit="cover"
+          />
+      </div>
+
+
     </div>
   )
 }

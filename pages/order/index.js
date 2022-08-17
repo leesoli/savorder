@@ -53,9 +53,9 @@ export default function Order () {
     <div>
       <Header/>
       <div className="flex flex-col">
-        <div className="flex text-md justify-between max-w-sm ml-8 sm:ml-12">
+        <div className="flex text-md justify-between max-w-sm mx-8 sm:ml-12">
           <span
-            className="border-black px-2  hover:cursor-pointer border-b-4"
+            className="border-black px-2 hover:cursor-pointer border-b-4"
             id="category__all"
             onClick={() => {
               handleClick("all");
@@ -88,9 +88,9 @@ export default function Order () {
           >Cold Noodles</span>
         </div>
 
-        <div className="border-gray-200 border-b-2"></div>
+        <div className="border-gray-200 border-b-2 mb-2"></div>
 
-        <div className="mt-16 md:grid md:grid-cols-2 px-2 xl:grid-cols-3 md:gap-x-4 md:gap-y-8 md:w-3/4 md:mr-8">{renderItems()}</div>
+        <div className="sm:py-12 sm:px-12 sm:grid sm:grid-cols-2 xl:grid-cols-3 sm:gap-x-4 sm:gap-y-8">{renderItems()}</div>
       </div>
     </div>
   )
