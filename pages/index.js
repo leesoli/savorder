@@ -4,8 +4,11 @@ import styles from '../styles/Home.module.css';
 import Header from '../components/Header';
 import MainImage from '../public/mitya-ivanov.jpg';
 import Link from 'next/link';
+import { useContext } from 'react';
+import {Context} from '../contexts/index';
 
 export default function Home() {
+  const { toggleTheme, theme } = useContext(Context);
 
   return (
     <div>
@@ -20,6 +23,11 @@ export default function Home() {
           <div className="sm:text-start text-center text-white sm:ml-12 mt-48 text-5xl sm:max-w-md">Traditional Japanese buckwheat noodles, made entirely from scratch.</div>
           <Link href="/order">
             <button
+              onClick={() => {
+                if (theme === 'light') {
+                  toggleTheme('dark');
+                }
+              }}
               className="uppercase mt-12 sm:ml-12 bg-white text-gray-800 text-lg py-2 px-4">Order now</button>
           </Link>
 

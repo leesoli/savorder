@@ -10,30 +10,50 @@ import { useContext, useState, useEffect } from 'react';
 
 export default function Header() {
   const [openMenu, setOpenMenu] = useState(true);
-  const { total, theme, toggleTheme } = useContext(Context);
+  const { total, theme, toggleTheme, activePage, changePage } = useContext(Context);
+
+  console.log(activePage, theme)
+
+  useEffect(() => {
+    checkTheme();
+  }, [])
+
+  useEffect(() => {
+    if (activePage === 'home' && theme === 'dark') {
+      toggleTheme();
+    } else if (activePage !== 'home' && theme === 'light') {
+      toggleTheme();
+    }
+  }, [activePage])
 
   useEffect(() => {
     checkTheme();
   }, [theme])
 
-  function checkTheme() {
+  function checkTheme () {
     const logo = document.getElementById('logo');
     const cart = document.getElementById('cart-icon');
     const menu = document.getElementById('menu');
+    const menuIcon = document.getElementById('open-menu-item');
+
     if (theme === 'light') {
-      menu.classList.remove('dark-header');
-      cart.classList.remove('dark-header');
       logo.classList.remove('dark-header');
-      menu.classList.add('light-header');
-      cart.classList.add('light-header');
+      cart.classList.remove('dark-header');
+      menu.classList.remove('dark-header');
+      menuIcon.classList.remove('dark-header');
       logo.classList.add('light-header');
+      cart.classList.add('light-header');
+      menu.classList.add('light-header');
+      menuIcon.classList.add('light-header');
     } else if (theme === 'dark') {
       menu.classList.remove('light-header');
       cart.classList.remove('light-header');
       logo.classList.remove('light-header');
+      menuIcon.classList.remove('light-header');
       menu.classList.add('dark-header');
       cart.classList.add('dark-header');
       logo.classList.add('dark-header');
+      menuIcon.classList.add('dark-header');
     }
   }
 
@@ -49,8 +69,10 @@ export default function Header() {
     const menu = document.getElementById('menu');
     setOpenMenu(true);
     menu.classList.add('hidden');
-    menu.classList.add('light-header');
-    menu.classList.remove('dark-header');
+    if (activePage === 'home') {
+      menu.classList.remove('dark-header');
+      menu.classList.add('light-header');
+    }
   }
 
   return (
@@ -59,7 +81,8 @@ export default function Header() {
         <MenuIcon
           onClick={openNav}
           id="open-menu-item"
-          className="w-6 h-6 hover:pointer relative text-white sm:invisible"/>:
+          className="w-6 h-6 hover:pointer relative sm:invisible"
+          />:
         <XIcon
           onClick={closeNav}
           id="close-menu-icon"
@@ -68,12 +91,10 @@ export default function Header() {
 
       <Link href="/">
         <div
-          className="font-semibold z-30 text-2xl hover:cursor-pointer ml-[2em] sm:ml-0 sm:mr-auto light-header"
+          className="font-semibold z-30 text-2xl hover:cursor-pointer ml-[2em] sm:ml-0 sm:mr-auto"
           id="logo"
           onClick={() => {
-            if (theme === 'dark') {
-              toggleTheme('light');
-            }
+            changePage('home')
           }}
         >
           Mazesoba
@@ -81,15 +102,13 @@ export default function Header() {
       </Link>
 
       <nav>
-        <ul className="hidden fixed light-header bg-white w-full z-10 left-0 top-0 bottom-0 sm:bg-transparent flex flex-col sm: flex-start sm:inline-flex sm:flex-row absolute sm:static sm:h-fit sm:w-fit items-center justify-center sm:justify-between text-2xl sm:text-lg sm:w-[18em] sm:mr-8" id="menu">
-          {["order", "menu", "story", "contact"].map(url => (
-            <li className="hover:cursor-pointer tracking-wider capitalize">
+        <ul className="hidden fixed bg-white w-full z-10 left-0 top-0 bottom-0 sm:bg-transparent flex flex-col sm: flex-start sm:inline-flex sm:flex-row absolute sm:static sm:h-fit sm:w-fit items-center justify-center sm:justify-between text-2xl sm:text-lg sm:w-[12em] sm:mr-8" id="menu">
+          {["order", "story", "contact"].map(url => (
+            <li className="hover:cursor-pointer tracking-wider capitalize p-2">
               <Link href={'/'+ url}>
                 <a onClick={() => {
                   closeNav()
-                  if (theme === 'light') {
-                    toggleTheme('dark');
-                  }
+                  changePage(url)
                 }}>{url}</a>
               </Link>
             </li>
@@ -99,7 +118,10 @@ export default function Header() {
 
       <Link href="/cart">
         <ShoppingCartIcon
-          className="h-6 w-6 light-header hover:cursor-pointer"
+          onClick={() => {
+            changePage("cart")
+          }}
+          className="h-6 w-6 hover:cursor-pointer sm:mr-4"
           id="cart-icon"
         />
       </Link>

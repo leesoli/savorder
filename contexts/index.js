@@ -8,7 +8,8 @@ function ContextProvider({children}) {
   const [orderItems, setOrderItems] = useState([]);
   const [total, setTotal] = useState(0);
   const [form, setForm] = useState([]);
-  const [theme, setTheme] = useState("light")
+  const [theme, setTheme] = useState("dark");
+  const [activePage, setActivePage] = useState('home');
 
   useEffect(() => {
     setOrderItems(data);
@@ -19,8 +20,12 @@ function ContextProvider({children}) {
     setTotal(findTotal());
   }, [cartItems]);
 
-  function toggleTheme(themeColor) {
-    setTheme(themeColor);
+  function changePage(page) {
+    setActivePage(page)
+  }
+
+  function toggleTheme() {
+    setTheme(prevColor => (prevColor === 'light'? 'dark': 'light'));
   }
 
   // function submitForm(e, formData) {
@@ -65,6 +70,8 @@ function ContextProvider({children}) {
         orderItems,
         total,
         theme,
+        activePage,
+        changePage,
         addToCart,
         removeFromCart,
         updateCart,
