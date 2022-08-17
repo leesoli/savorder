@@ -45,17 +45,17 @@ export default function Order () {
   }
 
   function setUnderline (category) {
-    document.querySelector(".font-bold").classList.remove("font-bold");
-    document.querySelector(`#category__${category}`).classList.add("font-bold");
+    document.querySelector(".border-b-4").classList.remove("border-b-4");
+    document.querySelector(`#category__${category}`).classList.add("border-b-4");
   }
 
   return (
     <div>
       <Header/>
-      <div className="px-8 py-12 md:py-24 md:flex md:justify-between xl:justify-start">
-        <div className="flex text-lg w-96 justify-between mb-8 md:flex-col md:mb-0 md:max-w-xs md:h-fit ml-2">
+      <div className="flex flex-col">
+        <div className="flex text-md justify-between max-w-sm ml-8 sm:ml-12">
           <span
-            className="border-r-2 pr-4 border-gray-100 md:border-none hover:cursor-pointer md:p-2 font-bold"
+            className="border-black px-2  hover:cursor-pointer border-b-4"
             id="category__all"
             onClick={() => {
               handleClick("all");
@@ -63,7 +63,7 @@ export default function Order () {
             }}
           >All</span>
           <span
-            className="border-r-2 pr-4 border-gray-100 md:border-none hover:cursor-pointer md:p-2"
+            className="hover:cursor-pointer border-black px-2"
             id="category__appetizers"
             onClick={() => {
               handleClick("appetizers");
@@ -71,7 +71,7 @@ export default function Order () {
             }}
             >Appetizers</span>
           <span
-            className="border-r-2 pr-4 border-gray-100 md:border-none hover:cursor-pointer md:p-2"
+            className="hover:cursor-pointer border-black px-2"
             id="category__donburi"
             onClick={() => {
               handleClick("donburi");
@@ -79,7 +79,7 @@ export default function Order () {
             }}
           >Donburi</span>
           <span
-            className="pr-4 hover:cursor-pointer md:p-2"
+            className="hover:cursor-pointer border-black px-2"
             id="category__coldnoodles"
             onClick={() => {
               handleClick("cold noodles");
@@ -88,7 +88,9 @@ export default function Order () {
           >Cold Noodles</span>
         </div>
 
-        <div className="md:grid md:grid-cols-2 px-2 xl:grid-cols-3 md:gap-x-4 md:gap-y-8 md:w-3/4 md:mr-8">{renderItems()}</div>
+        <div className="border-gray-200 border-b-2"></div>
+
+        <div className="mt-16 md:grid md:grid-cols-2 px-2 xl:grid-cols-3 md:gap-x-4 md:gap-y-8 md:w-3/4 md:mr-8">{renderItems()}</div>
       </div>
     </div>
   )
