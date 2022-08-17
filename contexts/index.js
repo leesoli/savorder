@@ -8,6 +8,7 @@ function ContextProvider({children}) {
   const [orderItems, setOrderItems] = useState([]);
   const [total, setTotal] = useState(0);
   const [form, setForm] = useState([]);
+  const [theme, setTheme] = useState("light")
 
   useEffect(() => {
     setOrderItems(data);
@@ -17,6 +18,10 @@ function ContextProvider({children}) {
     //updates total when cart items are updated
     setTotal(findTotal());
   }, [cartItems]);
+
+  function toggleTheme(themeColor) {
+    setTheme(themeColor);
+  }
 
   // function submitForm(e, formData) {
   //   e.preventDefault();
@@ -59,10 +64,12 @@ function ContextProvider({children}) {
         cartItems,
         orderItems,
         total,
+        theme,
         addToCart,
         removeFromCart,
         updateCart,
         findTotal,
+        toggleTheme
         // submitForm,
       }}
     >

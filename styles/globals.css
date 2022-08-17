@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .light-header {
+    @apply text-white
+  }
+
+  .dark-header {
+    @apply text-black
+  }
+}
