@@ -1,8 +1,9 @@
 import Header from '../../components/Header';
 import CartItems from '../../components/Cart-items';
 import { useContext } from "react";
-import useClicked from '../../hooks/useClicked';
 import { Context } from '/contexts/index';
+import useClicked from '../../hooks/useClicked';
+import Link from 'next/link';
 
 export default function Cart () {
   const {cartItems, total} = useContext(Context);
@@ -10,10 +11,17 @@ export default function Cart () {
   const cart = cartItems.map(item => <CartItems item={item} key={item.id} />);
 
   return (
-    <div className="w-screen">
+    <div className="w-full">
       <Header />
-      <main className="flex flex-col p-8 lg:w-3/4 sm:mx-auto">
-        <h2 className="text-4xl font-normal mb-12">Shopping Cart</h2>
+      <main className="flex flex-col p-8 sm:p-12 lg:w-3/4 sm:mx-auto">
+        {total === 0 &&
+        <div className="flex flex-col items-center bg-gray-100 w-2/3 p-4">
+          <div className="text-lg">You have no items in your cart</div>
+          <Link href="/order">
+            <a className="my-4 bg-blue-900 text-white text-md p-4">Checkout Menu</a>
+          </Link>
+        </div>
+        }
         {cart}
         <div className="flex justify-between my-16">
           <span className="text-xl">Subtotal</span>

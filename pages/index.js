@@ -20,7 +20,7 @@ export default function Home() {
       <main className="flex flex-col items-center sm:items-start bg-main-image h-screen">
         <Header/>
 
-          <div className="sm:text-start text-center text-white sm:ml-12 mt-48 text-5xl sm:max-w-md">Traditional Japanese buckwheat noodles, made entirely from scratch.</div>
+          <div className="sm:text-start text-center text-white sm:ml-12 mt-36 text-5xl sm:max-w-md">Traditional Japanese buckwheat noodles, made entirely from scratch.</div>
           <Link href="/order">
             <button
               onClick={() => {

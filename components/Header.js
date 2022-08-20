@@ -115,13 +115,21 @@ export default function Header() {
       </nav>
 
       <Link href="/cart">
+        {total > 0?
+        <SolidCartIcon
+        onClick={() => {
+          changePage("cart")
+        }}
+        className="h-6 w-6 hover:cursor-pointer hover:scale-110 transition ease-in-out sm:mr-4"
+        id="cart-icon"
+      />:
         <ShoppingCartIcon
           onClick={() => {
             changePage("cart")
           }}
           className="h-6 w-6 hover:cursor-pointer hover:scale-110 transition ease-in-out sm:mr-4"
           id="cart-icon"
-        />
+        />}
       </Link>
     </div>
   )

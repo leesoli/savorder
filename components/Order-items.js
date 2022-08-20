@@ -20,12 +20,12 @@ export default function OrderItems ({item}) {
   }, [clicked]);
 
   return (
-    <div className="flex items-start justify-between border-b-2 border-gray-200 px-8 py-4 md:p-4 sm:border-2 sm:rounded-xl"
+    <div className="flex items-start justify-between border-b-2 border-gray-200 px-8 py-4 md:p-4 sm:border-2 sm:rounded-xl hover:bg-gray-100"
       onClick={() => addToCart(item)}
     >
       <div className="w-7/12">
         <div className="text-xl font-bold sm:text-lg">{item.name}</div>
-        <div className="text-lg sm:text-base sm:my-2 tracking-wider">{item.description}</div>
+        <div className="text-lg sm:text-base my-4 sm:my-2 tracking-wider">{item.description}</div>
         <div className="text-md sm:text-sm">${item.price}</div>
       </div>
 
