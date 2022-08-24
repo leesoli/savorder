@@ -25,7 +25,7 @@ export default function CartItems ({item}) {
   return (
     <div className="flex mb-8 border-b-[1px] pb-8 border-gray-300 justify-between">
       <div className="relative w-28 h-20 sm:w-52 sm:h-36">
-        <Image layout="fill" objectFit="cover" src={`/${item.url}`}/>
+        <Image layout="fill" alt="image of menu item" objectFit="cover" src={`/${item.url}`}/>
       </div>
 
       <div className="flex flex-col justify-between sm:flex-row md:w-1/3">

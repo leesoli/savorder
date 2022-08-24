@@ -9,7 +9,11 @@ export default function Contact() {
       <div>
         <Header/>
           <div className="relative w-full h-80 mb-8">
-            <Image layout="fill" objectFit="cover" src="/restaurant.jpg"/>
+            <Image
+              layout="fill"
+              objectFit="cover"
+              src="/restaurant.jpg"
+              alt="restaurant bar image"/>
           </div>
         <div className="flex flex-col sm:flex-row p-8 sm:p-12 sm:justify-between">
           <div className="tracking-wider">

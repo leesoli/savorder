@@ -101,8 +101,8 @@ export default function Header() {
 
       <nav>
         <ul className="hidden fixed bg-white w-full z-10 left-0 top-0 bottom-0 sm:bg-transparent flex flex-col sm: flex-start sm:inline-flex sm:flex-row absolute sm:static sm:h-fit sm:w-fit items-center justify-center sm:justify-between text-2xl sm:text-lg sm:w-[12em] sm:mr-8" id="menu">
-          {["order", "story", "contact"].map(url => (
-            <li className="hover:cursor-pointer hover:scale-105 transition ease-in-out duration-300 tracking-wider capitalize p-2 sm:p-0">
+          {["order", "story", "contact"].map((url, index) => (
+            <li key={index} className="hover:cursor-pointer hover:scale-105 transition ease-in-out duration-300 tracking-wider capitalize p-2 sm:p-0">
               <Link href={'/'+ url}>
                 <a onClick={() => {
                   closeNav()
